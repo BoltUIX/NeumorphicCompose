@@ -1,8 +1,10 @@
 # Neumorphic Compose UI Kit
 
+![Neumorphic UI Kit](https://github.com/BoltUIX/NeumorphicCompose/blob/main/Intro.png?raw=true)
+
 A modern, customizable **Neumorphic UI Kit** built with **Jetpack Compose** for Android, providing a sleek, soft, and tactile design experience. This UI kit is **free to use** under the **MIT License**, making it ideal for developers looking to integrate neumorphic design into their Android applications.
 
-![Neumorphic UI Kit Preview](https://img.shields.io/badge/Jetpack%20Compose-UI%20Kit-blue)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-UI%20Kit-blue)
 ![Android](https://img.shields.io/badge/Platform-Android-green)
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow)
 
@@ -28,20 +30,13 @@ The Neumorphic Compose UI Kit offers a comprehensive set of components with rais
 
 To use the Neumorphic Compose UI Kit in your Android project, follow these steps:
 
-1. **Add Dependencies**: Include Jetpack Compose and Material dependencies in your `build.gradle` (app module):
-   ```gradle
-   implementation "androidx.compose.ui:ui:1.7.0"
-   implementation "androidx.compose.material3:material3:1.3.0"
-   implementation "androidx.compose.material:material-icons-extended:1.7.0"
-   ```
+1. **Copy the UI Kit Files**: Add the following files to your project under the `com.neumorphic.compose` package:
+    - `NeumorphicComponents.kt`: Contains all neumorphic components.
+    - `ModifierExtensions.kt`: Defines the `innerShadow` modifier for the neumorphic effect.
+    - `NeumorphicScreen.kt`: Demo screen showcasing all components.
+    - `MainActivity.kt`: Entry point to display the demo.
 
-2. **Copy the UI Kit Files**: Add the following files to your project under the `com.neumorphic.compose` package:
-   - `NeumorphicComponents.kt`: Contains all neumorphic components.
-   - `ModifierExtensions.kt`: Defines the `innerShadow` modifier for the neumorphic effect.
-   - `NeumorphicScreen.kt`: Demo screen showcasing all components.
-   - `MainActivity.kt`: Entry point to display the demo.
-
-3. **Run the Demo**: Use the `NeumorphicScreen` composable in your `MainActivity` to preview the components:
+2. **Run the Demo**: Use the `NeumorphicScreen` composable in your `MainActivity` to preview the components:
    ```kotlin
    setContent {
        NeumorphicComposeComponentsTheme {
@@ -59,9 +54,9 @@ To use the Neumorphic Compose UI Kit in your Android project, follow these steps
    }
    ```
 
-## Code Example
+## Code Examples
 
-Below is an example of using the `NeuMorphicButton` and `NeuMorphicFAB` components:
+Below are examples of using the `NeuMorphicButton`, `NeuMorphicFAB`, and `NeuMorphicPopup` components:
 
 ```kotlin
 @Composable
@@ -93,6 +88,17 @@ fun ButtonDemo() {
                 )
             }
         )
+        NeuMorphicPopup(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp),
+            contentPadding = 16.dp,
+            onDismiss = { /* Handle dismiss */ }
+        ) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text("Popup Title", style = MaterialTheme.typography.titleMedium)
+                Text("This is a neumorphic popup.")
+            }
+        }
     }
 }
 ```
@@ -218,7 +224,7 @@ We are actively working on **Version 2** of the Neumorphic Compose UI Kit! Plann
 - Accessibility improvements (e.g., content descriptions, focus handling).
 - Performance optimizations for complex layouts.
 
-If you’re interested in contributing or following the development, please reach out or check our [GitHub repository](#) (coming soon) for updates!
+If you’re interested in contributing or following the development, please visit our [GitHub repository](https://github.com/BoltUIX/NeumorphicCompose) for updates!
 
 ## License
 
@@ -227,7 +233,7 @@ This project is licensed under the **MIT License**:
 ```
 MIT License
 
-Copyright (c) 2025 [Your Name/Organization]
+Copyright (c) 2025 BoltUIX
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -250,8 +256,7 @@ SOFTWARE.
 
 ## Contributing
 
-Contributions are welcome! Please submit pull requests or open issues on our [GitHub repository](#) (coming soon) to suggest improvements or report bugs.
+Contributions are welcome! Please submit pull requests or open issues on our [GitHub repository](https://github.com/BoltUIX/NeumorphicCompose) to suggest improvements or report bugs.
 
 ---
 
-Happy coding with the Neumorphic Compose UI Kit! 
